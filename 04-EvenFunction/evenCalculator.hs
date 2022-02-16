@@ -8,5 +8,5 @@ isEven n = if (n `mod` 2) == 0
            else 3*n + 1
 
 isEven2 n = if even n
-            then n -2
+            then n - 2
             else 3*n + 1
