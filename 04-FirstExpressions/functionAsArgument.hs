@@ -10,7 +10,7 @@ main = do
   print (ifEven square 2)
   -- We can pass a lambda too
   print (ifEven (+1) 2) -- (+1) represents the lambda (\x -> x + 1)
-  -- We could use the function INC --- (Inc x) is equal to (x + 1)
+  -- We could use the function INC --- (inc x) is equal to (x + 1)
   print (ifEven (*2) 2) -- (*2) represents the lambda (\x -> x * 2)
   print (ifEven (^2) 2) -- (^2) represents the lambda (\x -> x ^ 2)
  
