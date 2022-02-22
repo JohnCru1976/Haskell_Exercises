@@ -10,10 +10,11 @@ main = do
     -- [("Bernard","Sumner"),("Ian","Curtis"),("Peter","Hook"),("Stephen","Morris"),("Vicent","Sumner")]
     print(sortBy compareLastNames names) -- We use SORTBY to sort according to a passed function
     -- [("Ian","Curtis"),("Peter","Hook"),("Stephen","Morris"),("Bernard","Sumner"),("Vicent","Sumner")]
+    print(sortBy compareLastNames_v2 names)
 
 
 -- This is an array of tuples we are sorting
-names = [("Ian","Curtis"),("Bernard","Sumner"), ("Vicent","Sumner"),("Peter","Hook"),("Stephen","Morris")]
+names = [("Ian","Curtis"),("Vicent","Sumner"), ("Bernard","Sumner"),("Peter","Hook"),("Stephen","Morris")]
 
 -- This is a function to sort by last names
 compareLastNames name1 name2 = if lastName1 > lastName2
@@ -28,4 +29,11 @@ compareLastNames name1 name2 = if lastName1 > lastName2
   where lastName1 = snd name1
         lastName2 = snd name2 
         firstName1 = fst name1
-        firstName2 = fst name2                                     
+        firstName2 = fst name2     
+-- Exercise Q4.1 Rewrite compareLastNames by using compare
+compareLastNames_v2 name1 name2 = if result == EQ
+                                  then compare firstName1 firstName2
+                                  else result 
+  where result = compare (snd name1) (snd name2)   
+        firstName1 = fst name1
+        firstName2 = fst name2                    
