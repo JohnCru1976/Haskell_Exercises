@@ -6,7 +6,7 @@ main = do
     print (addressLetter nyOffice member);
     print (addressLetter renoOffice member);
 
-member = ("Juan","Cru")
+member = ("Vicente","Morales")
 -- The next functions receive a tuple as parametrer (name,lastname)
 -- Fisrt function returns member + address depending the last name starting with L or later
 sfOffice name = if lastName < "L" -- The last name starts with letter lower than L
