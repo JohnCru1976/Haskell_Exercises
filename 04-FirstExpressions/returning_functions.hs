@@ -1,4 +1,3 @@
-import Language.Haskell.TH (location)
 main::IO()
 main = do
     -- First solution (incomplete)
