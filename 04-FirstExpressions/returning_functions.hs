@@ -1,9 +1,14 @@
+import Distribution.TestSuite (TestInstance(name))
 main::IO()
 main = do
     -- First solution (incomplete)
-    print (addressLetter sfOffice member);
-    print (addressLetter nyOffice member);
-    print (addressLetter renoOffice member);
+    print (addressLetter_v1 sfOffice member);
+    print (addressLetter_v1 nyOffice member);
+    print (addressLetter_v1 renoOffice member);
+    -- Second solution (final version)
+    print (addressLetter_v2 member "sf");
+    print (addressLetter_v2 member "ny");
+    print (addressLetter_v2 member "reno");
 
 member = ("Vicente","Morales")
 -- The next functions receive a tuple as parametrer (name,lastname)
@@ -24,8 +29,18 @@ renoOffice name = nameText ++ " - PO Box 456 - Reno, NV 89523"
 
 -- This would be a first solution. The problem is the function is going
 -- to be a part of a larger web application
-addressLetter location = location
+addressLetter_v1 location = location
 -- We build a function that return the proper functions according a little string
 -- "ny" for New York
 -- "sf" for San Francisco
 -- "reno" for Reno
+getLocationFunction location = case location of -- Estructura CASE ... OF -> _ ->
+    "ny" -> nyOffice
+    "sf" -> sfOffice
+    "reno" -> renoOffice
+    _ -> (\name -> fst name ++ " " ++ snd name) -- _ wildcard (similar to default)
+-- Now we can rebuild the function addressLetter_v1 to v2
+addressLetter_v2 name location = let locationFunction = getLocationFunction location
+                                 in locationFunction name
+     
+    

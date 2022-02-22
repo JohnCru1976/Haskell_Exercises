@@ -1,5 +1,7 @@
 -- This code is an example of use SORT and SORTBY functions
 -- Special values GT (Greater Than), LT (Less Than), EQ (Equal)
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use guards" #-}
 import Data.List -- Module that contains sort and sortby functions among others
 main :: IO()
 
