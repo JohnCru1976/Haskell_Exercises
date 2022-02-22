@@ -9,6 +9,7 @@ main = do
     print (addressLetter_v2 member "sf");
     print (addressLetter_v2 member "ny");
     print (addressLetter_v2 member "reno");
+    print (addressLetter_v2 member "dc");
 
 member = ("Vicente","Morales")
 -- The next functions receive a tuple as parametrer (name,lastname)
@@ -26,6 +27,9 @@ nyOffice name = nameText ++ " : PO Box 789 - New York, NY, 10013"
 -- Third function returns only last names + address
 renoOffice name = nameText ++ " - PO Box 456 - Reno, NV 89523"
     where nameText = snd name
+-- Exercise Q4.2 Fourth function returns everyone's name followed by Esq
+dcOffice name = nameText ++ "- PO Box 234 - Washington, DC 42356"
+    where nameText = fst name ++ " " ++ snd name ++ ", Esq."
 
 -- This would be a first solution. The problem is the function is going
 -- to be a part of a larger web application
@@ -38,6 +42,7 @@ getLocationFunction location = case location of -- Estructura CASE ... OF -> _ -
     "ny" -> nyOffice
     "sf" -> sfOffice
     "reno" -> renoOffice
+    "dc" -> dcOffice -- Exercise Q4.2
     _ -> (\name -> fst name ++ " " ++ snd name) -- _ wildcard (similar to default)
 -- Now we can rebuild the function addressLetter_v1 to v2
 addressLetter_v2 name location = let locationFunction = getLocationFunction location
