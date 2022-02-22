@@ -31,7 +31,7 @@ renoOffice name = nameText ++ " - PO Box 456 - Reno, NV 89523"
 dcOffice name = nameText ++ "- PO Box 234 - Washington, DC 42356"
     where nameText = fst name ++ " " ++ snd name ++ ", Esq."
 
--- This would be a first solution. The problem is the function is going
+-- This would be a first solution. The problem is that the function is going
 -- to be a part of a larger web application
 addressLetter_v1 location = location
 -- We build a function that return the proper functions according a little string
