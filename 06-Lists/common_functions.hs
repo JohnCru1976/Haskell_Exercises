@@ -1,6 +1,11 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Redundant bracket" #-}
 {-# HLINT ignore "Use infix" #-}
+{-# HLINT ignore "Use repeat" #-}
+{-# HLINT ignore "Use replicate" #-}
+-- Data.list module: is where all list functions are.
+-- https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-List.html
+
 main::IO()
 main = do
     -- !! operator: access a particular element of a list by its index
@@ -32,6 +37,14 @@ main = do
     print(drop 5 "wonderful") -- Returns "rful"
     print(drop 3 [1,2..10]) -- Returns [6,8,10]
     print(drop 8 "hello") -- Returns ""  - Parameter is bigger than the length
+    -- ZIP combine two lists into tuple pairs
+    print(zip [1,2,3] [2,4,6]) -- Returns [(1,2),(2,4),(3,6)]
+    print(zip "dog" "rabbit") -- Returns [('d','r'), ('o','a'),('g','b')]
+    print(zip ['a' .. 'd'] [1 ..]) -- Returns [('a',1),('b',2),('c',3),('d',4)]
+    -- CYCLE Given a list, cycle repeats that list endlessly
+    print(ones 6 2) -- Returns [1,2,1,2,1,2]
+    -- REPEAT Given a list, cycle repeats that list endlessly
+    print(ones 6 2) -- Returns [1,2,1,2,1,2]
 
 
 -- Use of PARTIAL APPLICATION with INFIX OPERATORS
@@ -41,3 +54,9 @@ infixExample3 = (!! 3) -- This is called a section
 
 -- PALINDROME FUNCTION EXAMPLE (REVERSE)
 isPalindrome word = word == reverse word
+
+-- CYCLE Given a list, cycle repeats that list endlessly
+--Example 1
+ones x n = take x (cycle[1..n]) 
+--REPEAT do the same as CYCLE (it seems at least)
+ones_v2 x n = take x (repeat[1..n])
