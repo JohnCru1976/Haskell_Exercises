@@ -12,6 +12,7 @@ main = do
     print(isEmpty [2,35,6]) -- false
     print(myHead [2,35,6]) -- 2
     print(myTail [2,35,6] ) -- [35,6]
+    print(myGCD 24 5)
     
 
 -- First we are going to use case rather than pattern matching
