@@ -49,7 +49,7 @@ myTail [] = []
 myGCD a 0 = a
 myGCD a b = myGCD b (a `mod` b)
 
--- Previous version myGCD
+-- Exercise Q7.2 Previous version myGCD
 myGCD_previous a b = if remainder == 0 -- 1) Goal condition
             then b            -- 2) Goal state
             else myGCD_previous b remainder -- 4) Rinse and repeat
