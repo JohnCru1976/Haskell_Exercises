@@ -4,12 +4,16 @@ import Distribution.Simple.Utils (xargs)
 {-# HLINT ignore "Use map" #-}
 main::IO()
 main = do
-    print(add3ToAll [1,2,3])
-    print(add3ToAllV2 [1,2,3])
-    print(add3ToAllV3 [1,2,3])
-    print(mul3ByAll [1,2,3])
-    print(mul3ByAllV2 [1,2,3])
-    print(mul3ByAllV3 [1,2,3])
+    print(add3ToAll [1,2,3]) -- [4,5,6]
+    print(add3ToAllV2 [1,2,3]) -- [4,5,6]
+    print(add3ToAllV3 [1,2,3]) -- [4,5,6]
+    print(mul3ByAll [1,2,3]) -- [3,6,9]
+    print(mul3ByAllV2 [1,2,3]) -- [3,6,9]
+    print(mul3ByAllV3 [1,2,3]) -- [3,6,9]
+    -- Other examples
+    print(map reverse ["dog","cat","moose"]) -- ["god","tac","esoom"]
+    print(map head ["dog","cat","moose"]) -- "dcm"
+    print(map (take 4) ["pumpkin","cat","peanut butter"]) -- ["pump","cat","pean"]
 
 -- Examples with recursion
 add3ToAll [] = []
