@@ -24,7 +24,7 @@ main = do
     print(isPalindrome "cheese") -- Returns false
     print(isPalindrome "racecar") -- Returns true
     print(isPalindrome  [1,2,1]) -- Returns true
-    -- ELEM Takes a value and a a list and checks whether the value is in the list
+    -- ELEM Takes a value and a list and checks whether the value is in the list
     print(13 `elem` [0,13..100]) -- Returns true
     print('p' `elem` "cheese") -- Returns false
     print((elem) 'p' "cheese") -- Use of infix - Not recommended
